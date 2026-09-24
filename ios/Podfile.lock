@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - InAppStory (1.29.5)
+  - inappstory_plugin (0.1.64):
+    - Flutter
+    - InAppStory (= 1.29.5)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - inappstory_plugin (from `.symlinks/plugins/inappstory_plugin/ios`)
+
+SPEC REPOS:
+  trunk:
+    - InAppStory
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  inappstory_plugin:
+    :path: ".symlinks/plugins/inappstory_plugin/ios"
+
+SPEC CHECKSUMS:
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  InAppStory: 1b50fbb0b81ee900c15a673a6e651f0771909fef
+  inappstory_plugin: f3daeff2739d6d722cb8739312f8d5ce3a685c95
+
+PODFILE CHECKSUM: 251cb053df7158f337c0712f2ab29f4e0fa474ce
+
+COCOAPODS: 1.17.0
