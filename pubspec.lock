@@ -100,10 +100,10 @@ packages:
     dependency: "direct main"
     description:
       name: inappstory_plugin
-      sha256: "23b5d57d8b8a45e4f71ab9998315f84751c5f9b4ada1c713df550513668ce075"
+      sha256: "163efbe77fc5e1e61c380dce20ec2bef9681c33a1d8d23dbcd6a2ccbd101e911"
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.4"
+    version: "0.10.0"
   leak_tracker:
     dependency: transitive
     description:

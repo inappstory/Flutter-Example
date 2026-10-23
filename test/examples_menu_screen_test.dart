@@ -6,8 +6,9 @@ import 'package:flutter_example/examples/placeholder_example_screen.dart';
 
 void main() {
   group('ExamplesMenuScreen (User Story 1 - Browse and open an example)', () {
-    testWidgets('renders all entries with titles and chevron icons',
-        (WidgetTester tester) async {
+    testWidgets('renders all entries with titles and chevron icons', (
+      WidgetTester tester,
+    ) async {
       final testEntries = [
         ExampleEntry(
           title: 'Test Example 1',
@@ -23,10 +24,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: ExamplesMenuScreen(
-            entries: testEntries,
-            onReset: () async {},
-          ),
+          home: ExamplesMenuScreen(entries: testEntries, onReset: () async {}),
         ),
       );
       await tester.pumpAndSettle();
@@ -37,8 +35,9 @@ void main() {
       expect(find.byIcon(Icons.chevron_right), findsNWidgets(2));
     });
 
-    testWidgets('navigates to example screen on tap and returns on back',
-        (WidgetTester tester) async {
+    testWidgets('navigates to example screen on tap and returns on back', (
+      WidgetTester tester,
+    ) async {
       final testEntries = [
         ExampleEntry(
           title: 'Custom Destination Screen',
@@ -51,10 +50,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: ExamplesMenuScreen(
-            entries: testEntries,
-            onReset: () async {},
-          ),
+          home: ExamplesMenuScreen(entries: testEntries, onReset: () async {}),
         ),
       );
       await tester.pumpAndSettle();
@@ -74,25 +70,39 @@ void main() {
       expect(find.text('Custom Destination Screen'), findsOneWidget);
     });
 
-    testWidgets('renders default kExamples list when no entries provided',
-        (WidgetTester tester) async {
+    testWidgets('renders default kExamples list when no entries provided', (
+      WidgetTester tester,
+    ) async {
       await tester.pumpWidget(
-        MaterialApp(
-          home: ExamplesMenuScreen(
-            onReset: () async {},
-          ),
-        ),
+        MaterialApp(home: ExamplesMenuScreen(onReset: () async {})),
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Simple integration (Stories feed)'), findsOneWidget);
-      expect(find.byType(ListTile), findsWidgets);
+      const titles = [
+        'Simple integration (Stories feed)',
+        'Cell customization',
+        'Custom cell',
+        'Single story',
+        'Onboarding',
+        'In-App Messaging (IAM)',
+        'Custom GoodsWidget',
+        'Checkout',
+        'Favorites',
+        'Banners',
+        'Multi-feed',
+        'User switching',
+        'Tags & Placeholders',
+        'Reader customization',
+      ];
+      expect(kExamples.map((entry) => entry.title), orderedEquals(titles));
+      expect(find.text('Checkout'), findsOneWidget);
     });
   });
 
   group('ExamplesMenuScreen (User Story 2 - Reset isolation)', () {
-    testWidgets('invokes reset on initial load and on return from route',
-        (WidgetTester tester) async {
+    testWidgets('invokes reset on initial load and on return from route', (
+      WidgetTester tester,
+    ) async {
       int resetCount = 0;
 
       final testEntries = [
@@ -132,14 +142,14 @@ void main() {
       expect(resetCount, equals(2));
     });
 
-    testWidgets('renders normally even if reset throws an error',
-        (WidgetTester tester) async {
+    testWidgets('renders normally even if reset throws an error', (
+      WidgetTester tester,
+    ) async {
       final testEntries = [
         ExampleEntry(
           title: 'Resilient Entry',
-          builder: (context) => const PlaceholderExampleScreen(
-            title: 'Resilient Entry',
-          ),
+          builder: (context) =>
+              const PlaceholderExampleScreen(title: 'Resilient Entry'),
         ),
       ];
 

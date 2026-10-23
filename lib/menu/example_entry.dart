@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../examples/banners_screen.dart';
 import '../examples/cell_customization_screen.dart';
+import '../examples/checkout_screen.dart';
 import '../examples/custom_cell_screen.dart';
 import '../examples/custom_goods_screen.dart';
 import '../examples/favorites_screen.dart';
@@ -15,10 +16,7 @@ import '../examples/user_change_screen.dart';
 
 /// Represents a single selectable entry in the examples start menu.
 class ExampleEntry {
-  const ExampleEntry({
-    required this.title,
-    required this.builder,
-  });
+  const ExampleEntry({required this.title, required this.builder});
 
   /// Human-readable title displayed in the menu list row.
   final String title;
@@ -60,14 +58,12 @@ final List<ExampleEntry> kExamples = [
     title: 'Custom GoodsWidget',
     builder: (context) => const CustomGoodsScreen(),
   ),
+  ExampleEntry(title: 'Checkout', builder: (context) => const CheckoutScreen()),
   ExampleEntry(
     title: 'Favorites',
     builder: (context) => const FavoritesScreen(),
   ),
-  ExampleEntry(
-    title: 'Banners',
-    builder: (context) => const BannersScreen(),
-  ),
+  ExampleEntry(title: 'Banners', builder: (context) => const BannersScreen()),
   ExampleEntry(
     title: 'Multi-feed',
     builder: (context) => const MultiFeedScreen(),

@@ -22,7 +22,7 @@ To run the example application:
 	flutter run
 	```
 
-The Android host is configured to initialize the SDK natively. For iOS, Flutter installs the CocoaPods dependencies as part of the normal build; if needed, run `pod install` from the `ios/` directory after `flutter pub get`.
+The example uses `inappstory_plugin` 0.10.0, which supports iOS integration through Swift Package Manager (SPM) as well as CocoaPods. The Android host is configured to initialize the SDK natively. For iOS, Flutter installs the CocoaPods dependencies as part of the normal build; if needed, run `pod install` from the `ios/` directory after `flutter pub get`.
 
 ## Example Screens
 
@@ -33,6 +33,7 @@ The Android host is configured to initialize the SDK natively. For iOS, Flutter 
 - **Onboarding** - displays onboarding stories.
 - **In-App Messaging (IAM)** - shows in-app messages by ID or event.
 - **Custom GoodsWidget** - demonstrates a custom product widget in a story.
+- **Checkout** - adds Products-widget offers to a session-only in-memory cart, exposes current cart snapshots to the SDK, and opens a host cart screen from the reader.
 - **Favorites** - enables favorite stories and displays the favorites list.
 - **Banners** - displays banners from a configured placement.
 - **Multi-feed** - displays multiple story feeds.
